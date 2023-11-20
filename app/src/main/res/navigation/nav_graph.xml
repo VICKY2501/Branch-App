@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/hilt_LoginFragment"
+    >
+    <fragment
+        android:id="@+id/hilt_LoginFragment"
+        android:name="com.example.branchapp.view.fragments.LoginFragment"
+        android:label="Hilt_LoginFragment"
+        tools:layout="@layout/fragment_login"
+        >
+        <action
+            android:id="@+id/action_hilt_LoginFragment_to_hilt_MessageFragment2"
+            app:destination="@id/hilt_MessageFragment2"/>
+<!--            app:popUpTo="@id/hilt_LoginFragment"-->
+<!--            app:popUpToInclusive="true"-->
+
+    </fragment>
+    <fragment
+        android:id="@+id/hilt_MessageFragment2"
+        android:name="com.example.branchapp.view.fragments.MessageFragment"
+        android:label="Hilt_MessageFragment"
+        tools:layout="@layout/fragment_message">
+        <action
+            android:id="@+id/action_hilt_MessageFragment2_to_hilt_SingleMessageFragment"
+            app:destination="@id/hilt_SingleMessageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/hilt_SingleMessageFragment"
+        android:name="com.example.branchapp.view.fragments.SingleMessageFragment"
+        android:label="Hilt_SingleMessageFragment"
+        tools:layout="@layout/fragment_single_message">
+    <argument
+        android:name="threadId"
+        app:argType="integer" />
+        </fragment>
+</navigation>
